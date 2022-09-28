@@ -1,5 +1,5 @@
 <p align="center">
-<img width="512" height="512" src="https://via.placeholder.com/512.png">
+<img width="256" height="256" src="https://via.placeholder.com/256.png">
 <br>
 
 <h1 align="center">🤖 Robô Eddie 🤖</h1>
