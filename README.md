@@ -1,5 +1,5 @@
 <p align="center">
-<img width="256" height="256" src="https://via.placeholder.com/256.png">
+<img width="256" height="256" src="https://media.discordapp.net/attachments/1004722809764851712/1024693284335005736/Robo_reeed.jpg">
 <br>
 
 <h1 align="center">🤖 Robô Eddie 🤖</h1>
