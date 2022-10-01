@@ -18,4 +18,4 @@ async def on_message(message):
         await message.channel.send(f'{message.author.name} as regras são:{os.linesep}1-Denunciar o Mateus.')
 
 # rodar o bot(token do bot)
-client.run('MTAyNDY5MTUzOTQ5MTk1MDYwMg.GOiTTH.eQt5NHMEcbuVcoCZrrPP1zq29p2REv-6WOl5ko')
+client.run('TOKEN')
