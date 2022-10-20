@@ -25,6 +25,8 @@ if __name__ == '__main__':
     
     Fazendo isso de maneira automática para não precisarmos ficar alterando direto este arquivo.
     """
+    cmd_list: list[commands.DiscordEvents] = []
+
     for command_name, command in inspect.getmembers(commands, inspect.isclass):
         assert hasattr(command, '_isdiscordevent'), "Não é um comando"
 
@@ -32,9 +34,14 @@ if __name__ == '__main__':
             continue
 
         try:
-            command(client)
+            cmd_list.append(command())
         except Exception as e:
             print(f"[{command.__name__}] Não foi registrado, algum erro ocorreu!", e)
+
+    @client.event
+    async def on_message(message):
+        for cmd in cmd_list:
+            await cmd.on_message(message=message)
 
     # Executando o BOT
     client.run(token['token'])
