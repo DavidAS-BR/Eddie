@@ -8,5 +8,6 @@ Registrar comandos criados no modelo do PingCommand neste local
 Basta fazer:
 from .NOMEDOARQUIVO import NOMEDACLASSE
 """
-# from .PingCommand import PingCommand
+from .PingCommand import PingCommand
 from .HelloCommand import HelloCommand
+from .EddieTalk import EddieTalk
