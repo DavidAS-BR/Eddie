@@ -4,6 +4,9 @@ import pathlib
 import inspect
 import json
 
+from src.commands import HelloCommand
+from src.commands.PingCommand import PingCommand
+
 if __name__ == '__main__':
     # Lendo o arquivo com o token do BOT (ESTE ARQUIVO NÃO DEVE SER POSTADO NO GITHUB)
     # O arquivo deve ter o nome "token.json" e conter o seguinte conteúdo: {"token": "TOKEN_DO_BOT"}
@@ -25,16 +28,18 @@ if __name__ == '__main__':
     
     Fazendo isso de maneira automática para não precisarmos ficar alterando direto este arquivo.
     """
-    for command_name, command in inspect.getmembers(commands, inspect.isclass):
-        assert hasattr(command, '_isdiscordevent'), "Não é um comando"
-
-        if command.__name__ == 'DiscordEvents':
-            continue
-
-        try:
-            command(client)
-        except Exception as e:
-            print(f"[{command.__name__}] Não foi registrado, algum erro ocorreu!", e)
+    PingCommand(client)
+    HelloCommand(client)
+    # for command_name, command in inspect.getmembers(commands, inspect.isclass):
+    #     assert hasattr(command, '_isdiscordevent'), "Não é um comando"
+    #
+    #     if command.__name__ == 'DiscordEvents':
+    #         continue
+    #
+    #     try:
+    #         command(client)
+    #     except Exception as e:
+    #         print(f"[{command.__name__}] Não foi registrado, algum erro ocorreu!", e)
 
     # Executando o BOT
     client.run(token['token'])
